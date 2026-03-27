@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+export default function StarterBusinessSite() {
+  const products = [
+    {
+      name: "Продукт 1",
+      price: "99 лв.",
+      description: "Кратко описание на продукта и ползата за клиента.",
+    },
+    {
+      name: "Продукт 2",
+      price: "149 лв.",
+      description: "Още един продукт с ясно и убедително представяне.",
+    },
+    {
+      name: "Продукт 3",
+      price: "199 лв.",
+      description: "Подходящ за хора, които търсят по-премиум вариант.",
+    },
+  ];
+
+  const benefits = [
+    "Бърза и лесна поръчка",
+    "Професионално обслужване",
+    "Ясни цени и условия",
+    "Подходящо за мобилни устройства",
+  ];
+
+  return (
+    <div className="min-h-screen bg-white text-slate-900">
+      <header className="border-b border-slate-200 bg-white/90 backdrop-blur sticky top-0 z-20">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+          <div>
+            <div className="text-xl font-bold">Име на бранда</div>
+            <div className="text-sm text-slate-500">Услуга и продукти</div>
+          </div>
+          <nav className="hidden md:flex gap-6 text-sm">
+            <a href="#services" className="hover:text-slate-600">Услуги</a>
+            <a href="#products" className="hover:text-slate-600">Продукти</a>
+            <a href="#about" className="hover:text-slate-600">За нас</a>
+            <a href="#contact" className="hover:text-slate-600">Контакт</a>
+          </nav>
+          <a
+            href="#contact"
+            className="rounded-2xl bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:opacity-90"
+          >
+            Поръчай
+          </a>
+        </div>
+      </header>
+
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="grid gap-10 lg:grid-cols-2 items-center">
+          <div>
+            <div className="inline-flex rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-600 mb-4">
+              Онлайн поръчки и представяне на услуги
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              Продаваме <span className="text-slate-500">продукти</span> и предлагаме <span className="text-slate-500">услуга</span> в един модерен сайт
+            </h1>
+            <p className="mt-6 text-lg text-slate-600 max-w-xl">
+              Това е стартова версия на сайт, който представя твоя бранд, описва услугата ти, показва продуктите и насочва клиента към поръчка или плащане.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#products"
+                className="rounded-2xl bg-slate-900 px-6 py-3 text-white font-medium shadow-sm hover:opacity-90"
+              >
+                Виж продуктите
+              </a>
+              <a
+                href="#services"
+                className="rounded-2xl border border-slate-300 px-6 py-3 font-medium hover:bg-slate-50"
+              >
+                Виж услугата
+              </a>
+            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {benefits.map((benefit) => (
+              <div key={benefit} className="rounded-3xl border border-slate-200 p-6 shadow-sm">
+                <div className="text-lg font-semibold">{benefit}</div>
+                <p className="mt-2 text-sm text-slate-600">
+                  Текстът тук може да се замени с реални предимства на твоя бизнес.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="bg-slate-50 border-y border-slate-200">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="max-w-2xl mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold">Услуги</h2>
+            <p className="mt-4 text-slate-600 text-lg">
+              Тук ще опишем точно каква услуга предлагаш, за кого е подходяща, как протича и защо клиентът да избере теб.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              "Консултация",
+              "Изпълнение",
+              "Поддръжка",
+            ].map((item, index) => (
+              <div key={item} className="rounded-3xl bg-white p-8 shadow-sm border border-slate-200">
+                <div className="text-sm text-slate-500">0{index + 1}</div>
+                <h3 className="mt-3 text-xl font-semibold">{item}</h3>
+                <p className="mt-3 text-slate-600">
+                  Примерен текст за етап от услугата. Тук ще сложим реалното описание по твоята дейност.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="products" className="mx-auto max-w-6xl px-6 py-20">
+        <div className="flex items-end justify-between gap-6 flex-wrap mb-10">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold">Продукти</h2>
+            <p className="mt-4 text-slate-600 text-lg">
+              Каталогът може да съдържа снимки, описания, цени и бутон за плащане или запитване.
+            </p>
+          </div>
+          <a href="#contact" className="text-sm font-medium underline underline-offset-4">
+            Искам персонална оферта
+          </a>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {products.map((product) => (
+            <div key={product.name} className="rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+              <div className="h-52 bg-slate-100 flex items-center justify-center text-slate-400 text-sm">
+                Снимка на продукта
+              </div>
+              <div className="p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="text-xl font-semibold">{product.name}</h3>
+                  <div className="text-sm font-medium rounded-full bg-slate-100 px-3 py-1">{product.price}</div>
+                </div>
+                <p className="mt-3 text-slate-600">{product.description}</p>
+                <div className="mt-6 flex gap-3">
+                  <button className="rounded-2xl bg-slate-900 px-4 py-2 text-white text-sm font-medium hover:opacity-90">
+                    Купи
+                  </button>
+                  <button className="rounded-2xl border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-50">
+                    Научи повече
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="about" className="bg-slate-900 text-white">
+        <div className="mx-auto max-w-6xl px-6 py-20 grid gap-8 lg:grid-cols-2 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold">За нас</h2>
+            <p className="mt-4 text-slate-300 text-lg leading-8">
+              Тук ще сложим кратка, силна история за твоя бранд — кой си, какво предлагаш и защо клиентите да ти се доверят.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-3xl bg-white/10 p-6">
+              <div className="text-3xl font-bold">100+</div>
+              <div className="mt-2 text-slate-300">доволни клиенти</div>
+            </div>
+            <div className="rounded-3xl bg-white/10 p-6">
+              <div className="text-3xl font-bold">24/7</div>
+              <div className="mt-2 text-slate-300">възможност за поръчки</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="mx-auto max-w-4xl px-6 py-20">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold">Контакт и поръчка</h2>
+          <p className="mt-4 text-slate-600 text-lg">
+            Тук можем да добавим форма, телефон, имейл и бутон към плащане с карта или платежен линк.
+          </p>
+        </div>
+
+        <div className="mt-10 rounded-3xl border border-slate-200 p-8 shadow-sm bg-white">
+          <div className="grid gap-4 md:grid-cols-2">
+            <input className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-slate-300" placeholder="Име" />
+            <input className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-slate-300" placeholder="Имейл" />
+          </div>
+          <input className="mt-4 w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-slate-300" placeholder="Телефон" />
+          <textarea className="mt-4 w-full rounded-2xl border border-slate-300 px-4 py-3 min-h-36 outline-none focus:ring-2 focus:ring-slate-300" placeholder="Напиши какво искаш да поръчаш или попитай за услугата"></textarea>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <button className="rounded-2xl bg-slate-900 px-6 py-3 text-white font-medium hover:opacity-90">
+              Изпрати запитване
+            </button>
+            <button className="rounded-2xl border border-slate-300 px-6 py-3 font-medium hover:bg-slate-50">
+              Плати с карта
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-slate-200">
+        <div className="mx-auto max-w-6xl px-6 py-8 flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-sm text-slate-500">
+          <div>© 2026 Име на бранда. Всички права запазени.</div>
+          <div className="flex gap-4">
+            <a href="#">Политика за поверителност</a>
+            <a href="#">Общи условия</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
